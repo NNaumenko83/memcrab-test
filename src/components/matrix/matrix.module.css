@@ -1,0 +1,34 @@
+.grid__container {
+	display: grid;
+	gap: 4px;
+}
+
+.cell {
+	padding: 10px;
+	border: 1px solid #ccc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+	transition: background 0.2s;
+}
+
+.cell:hover {
+	background-color: #f0f0f0;
+}
+
+.header {
+	font-weight: bold;
+	background: #e0e0e0;
+}
+
+.sum {
+	background: #d0f0d0;
+	font-weight: bold;
+}
+
+.percentile {
+	background: #f0f8ff;
+	font-style: italic;
+}

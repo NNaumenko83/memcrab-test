@@ -15,6 +15,7 @@ export function TableContextProvider({ children }: { children: React.ReactNode }
     const [columnsQuantity, setColumnsQuantity] = useState<number>(0)
 
 
+
     return <TableContext.Provider value={{ rowsQuantity, setRowsQuantity, columnsQuantity, setColumnsQuantity }}>{children}</TableContext.Provider>;
 }
 
