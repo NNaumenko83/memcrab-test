@@ -1,0 +1,6 @@
+.form {
+	display: flex;
+	gap: 1rem;
+	margin-block: auto;
+	justify-content: center;
+}
