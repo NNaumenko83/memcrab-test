@@ -7,8 +7,11 @@ const Header = () => {
     return (
         <header className={css.header}>
             <Container>
-                <h1>Memcrab Test</h1>
-                <Form />
+                <div className={css.header__content}>
+                    <h1>Memcrab</h1>
+                    <Form />
+                </div>
+
             </Container>
         </header>
     )

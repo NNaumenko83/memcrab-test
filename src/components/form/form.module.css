@@ -3,4 +3,16 @@
 	gap: 1rem;
 	margin-block: auto;
 	justify-content: center;
+	align-items: center;
+}
+
+.form label {
+	font-weight: 500;
+}
+.form input {
+	width: 4rem;
+	padding: 0.25rem;
+	border: 1px solid #ccc;
+	border-radius: 0.25rem;
+	text-align: center;
 }
