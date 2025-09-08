@@ -2,11 +2,10 @@ import { useState } from "react"
 import useTableContext from "../../context/table-context"
 import css from "./form.module.css"
 import Button from "../button/button"
-
+import InputField from "./input-field/input-field"
 
 const Form = () => {
     const { setRowsQuantity, setColumnsQuantity } = useTableContext()
-
 
     const [localRows, setLocalRows] = useState<number | undefined>()
     const [localColumns, setLocalColumns] = useState<number | undefined>()
@@ -17,34 +16,14 @@ const Form = () => {
 
         setRowsQuantity(localRows)
         setColumnsQuantity(localColumns)
+        setLocalRows(undefined)
+        setLocalColumns(undefined)
     }
 
     return (
         <form className={css.form} onSubmit={handleSubmit}>
-            <label htmlFor="rows">Rows:</label>
-            <input
-                type="number"
-                id="rows"
-                name="rows"
-                value={localRows}
-                onChange={(e) => setLocalRows(Math.min(100, Math.max(0, Number(e.target.value))))}
-                min={0}
-                max={100}
-                step={1}
-            />
-
-            <label htmlFor="columns">Columns:</label>
-            <input
-                type="number"
-                id="columns"
-                name="columns"
-                value={localColumns}
-                onChange={(e) => setLocalColumns(Math.min(100, Math.max(0, Number(e.target.value))))}
-                min={0}
-                max={100}
-                step={1}
-            />
-
+            <InputField id="rows" label="Rows" value={localRows} onChange={setLocalRows} />
+            <InputField id="columns" label="Columns" value={localColumns} onChange={setLocalColumns} />
             <Button title="Submit" type="submit" disabled={!localRows || !localColumns} />
         </form>
     )
