@@ -25,6 +25,7 @@ export const MatrixRow: React.FC<MatrixRowProps> = React.memo(({
     const { incrementCell, deleteRow } = useMatrixContext()
 
     const rowSum = useMemo(() => row.reduce((acc, c) => acc + c.amount, 0), [row])
+    const maxInRow = useMemo(() => Math.max(...row.map(c => c.amount)), [row])
     const showPercent = hoveredRowIndex === rowIndex
 
     return (
@@ -38,6 +39,8 @@ export const MatrixRow: React.FC<MatrixRowProps> = React.memo(({
                 const value = showPercent
                     ? (rowSum === 0 ? "0%" : ((cell.amount / rowSum) * 100).toFixed(1) + "%")
                     : cell.amount
+
+                const heatPercent = maxInRow === 0 ? 0 : (cell.amount / maxInRow) * 100
                 const isHighlighted = highlightedIds.includes(cell.id)
 
                 return (
@@ -45,6 +48,7 @@ export const MatrixRow: React.FC<MatrixRowProps> = React.memo(({
                         key={cell.id}
                         value={value}
                         isHighlighted={isHighlighted}
+                        heatPercent={heatPercent}
                         isRowHighlighted={showPercent}
                         onClick={() => incrementCell(rowIndex, colIndex)}
                         onMouseEnter={() => setHoveredCellId(cell.id)}
