@@ -1,6 +1,9 @@
 .header {
 	background-color: #f8f9fa;
 	padding: 1rem 0;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 }
 
 .header h1 {
