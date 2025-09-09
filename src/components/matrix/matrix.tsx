@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import useTableContext from "../../context/table-context"
+import useTableContext from "../../context/matrix-context"
 import type { Cell } from "../../types/cell"
 import css from "./matrix.module.css"
 import Container from "../container/container"

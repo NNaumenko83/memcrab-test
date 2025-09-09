@@ -1,6 +1,6 @@
 import Header from "./components/header/header"
 import MatrixGrid from "./components/matrix/matrix"
-import { TableContextProvider } from "./context/table-context"
+import { TableContextProvider } from "./context/matrix-context"
 
 
 

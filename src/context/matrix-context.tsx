@@ -7,7 +7,7 @@ type TableContext = {
     setColumnsQuantity: (quantity: number) => void;
 };
 
-export const TableContext = createContext<TableContext | undefined>(undefined);
+export const MatrixContext = createContext<TableContext | undefined>(undefined);
 
 
 export function TableContextProvider({ children }: { children: React.ReactNode }) {
@@ -16,14 +16,14 @@ export function TableContextProvider({ children }: { children: React.ReactNode }
 
 
 
-    return <TableContext.Provider value={{ rowsQuantity, setRowsQuantity, columnsQuantity, setColumnsQuantity }}>{children}</TableContext.Provider>;
+    return <MatrixContext.Provider value={{ rowsQuantity, setRowsQuantity, columnsQuantity, setColumnsQuantity }}>{children}</MatrixContext.Provider>;
 }
 
 export default function useTableContext() {
-    const context = useContext(TableContext);
+    const context = useContext(MatrixContext);
     if (!context)
         throw Error(
-            "useTableContext can only be used inside an TableContext.Provider"
+            "useTableContext can only be used inside an MatrixContext.Provider"
         );
     return context;
 }

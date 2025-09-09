@@ -1,5 +1,5 @@
 import { useState } from "react"
-import useTableContext from "../../context/table-context"
+import useTableContext from "../../context/matrix-context"
 import css from "./form.module.css"
 import Button from "../button/button"
 import InputField from "./input-field/input-field"
