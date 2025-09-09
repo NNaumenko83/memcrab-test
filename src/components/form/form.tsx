@@ -24,7 +24,7 @@ const Form = () => {
         <form className={css.form} onSubmit={handleSubmit}>
             <InputField id="rows" label="Rows" value={localRows} onChange={setLocalRows} />
             <InputField id="columns" label="Columns" value={localColumns} onChange={setLocalColumns} />
-            <Button title="Submit" type="submit" disabled={!localRows || !localColumns} />
+            <Button title="Generate" type="submit" disabled={!localRows || !localColumns} />
         </form>
     )
 }

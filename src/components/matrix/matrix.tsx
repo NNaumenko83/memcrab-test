@@ -46,21 +46,21 @@ const Matrix: React.FC = () => {
         <Container>
             <div
                 className={css.grid__container}
-                style={{ gridTemplateColumns: `150px repeat(${columnsQuantity + 2}, minmax(60px, 1fr))` }}
+                style={{ gridTemplateColumns: `150px repeat(${columnsQuantity + 1}, minmax(60px, 1fr)) 100px` }}
             >
                 <div className={`${css.cell} ${css.header}`} />
                 {Array.from({ length: columnsQuantity }, (_, i) => (
                     <div key={i} className={`${css.cell} ${css.header}`}>{i + 1}</div>
                 ))}
                 <div className={`${css.cell} ${css.header}`}>SUM</div>
-                <div className={`${css.cell} ${css.header}`}>Actions</div>
+                <div className={`${css.cell} ${css.header}`} />
             </div>
 
             {matrix.map((row, rowIndex) => (
                 <div
                     key={rowIndex}
                     className={css.grid__container}
-                    style={{ gridTemplateColumns: `150px repeat(${columnsQuantity + 2}, minmax(60px, 1fr))` }}
+                    style={{ gridTemplateColumns: `150px repeat(${columnsQuantity + 1}, minmax(60px, 1fr)) 100px` }}
                 >
                     <div className={`${css.cell} ${css.header}`}>{rowIndex + 1}</div>
                     {row.map((cell, colIndex) => (
@@ -83,14 +83,13 @@ const Matrix: React.FC = () => {
 
             <div
                 className={css.grid__container}
-                style={{ gridTemplateColumns: `150px repeat(${columnsQuantity + 2}, minmax(60px, 1fr))` }}
+                style={{ gridTemplateColumns: `150px repeat(${columnsQuantity + 1}, minmax(60px, 1fr)) 100px` }}
             >
                 <div className={`${css.cell} ${css.header}`}>60th percentile</div>
                 {colPercentiles.map((val, i) => (
                     <div key={i} className={`${css.cell} ${css.percentile}`}>{val}</div>
                 ))}
-                <div className={`${css.cell} ${css.percentile}`} />
-                <div className={`${css.cell} ${css.percentile}`} />
+
             </div>
         </Container>
     )

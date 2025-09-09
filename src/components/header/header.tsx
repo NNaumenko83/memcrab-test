@@ -18,7 +18,7 @@ const Header = () => {
                     <h1>Memcrab</h1>
                     <div className={css.header__controls}>
                         <Form />
-                        <Button title="Add row" onClick={handleAddRow} />
+                        {rowsQuantity > 0 && <Button title="Add row" onClick={handleAddRow} variant="green" />}
                     </div>
                 </div>
             </Container>
