@@ -1,11 +1,11 @@
 import { useState } from "react"
-import useTableContext from "../../context/matrix-context"
+import { useMatrixContext } from "../../context/matrix-context"
 import css from "./form.module.css"
 import Button from "../button/button"
 import InputField from "./input-field/input-field"
 
 const Form = () => {
-    const { setRowsQuantity, setColumnsQuantity } = useTableContext()
+    const { setRowsQuantity, setColumnsQuantity } = useMatrixContext()
 
     const [localRows, setLocalRows] = useState<number | undefined>()
     const [localColumns, setLocalColumns] = useState<number | undefined>()

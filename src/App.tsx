@@ -1,16 +1,16 @@
 import Header from "./components/header/header"
 import MatrixGrid from "./components/matrix/matrix"
-import { TableContextProvider } from "./context/matrix-context"
+import { MatrixProvider } from "./context/matrix-context"
 
 
 
 function App() {
 
   return (
-    <TableContextProvider>
+    <MatrixProvider>
       <Header />
       <MatrixGrid />
-    </TableContextProvider>
+    </MatrixProvider>
   )
 }
 
