@@ -1,13 +1,38 @@
 .button {
-	background-color: blue;
 	color: white;
 	border: none;
 	border-radius: 0.25rem;
 	padding: 0.5rem 1rem;
 	cursor: pointer;
+	font-weight: 500;
+	transition: background-color 0.2s;
 }
 
 .button:disabled {
 	background-color: grey;
 	cursor: not-allowed;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.blue:hover:not(:disabled) {
+	background-color: #0000cc;
+}
+
+.green {
+	background-color: green;
+}
+
+.green:hover:not(:disabled) {
+	background-color: #006600;
+}
+
+.red {
+	background-color: red;
+}
+
+.red:hover:not(:disabled) {
+	background-color: #cc0000;
 }
