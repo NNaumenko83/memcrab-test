@@ -1,69 +1,66 @@
-# React + TypeScript + Vite
+# Matrix App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic React application that allows users to interact with a matrix of numbers, visualize sums, percentages, and row-based heatmaps. Built with **React**, **TypeScript**, and **CSS Modules**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📝 About
 
-## Expanding the ESLint configuration
+Matrix App is designed as a lightweight tool to explore and manipulate numeric data in a tabular format. Users can dynamically create matrices, increment values, delete or add rows, and instantly see both percentage calculations and row-based heatmaps.  
+The application is optimized for performance using **React.memo**, **useMemo**, and **Context API**.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Dynamic matrix generation** – create any number of rows and columns.
+- **Increment cell values** – click a cell to increase its value.
+- **Delete rows** – remove rows individually.
+- **Add rows** – append new rows at the bottom.
+- **Hover sum cell** – view percentages of each cell relative to the row total.
+- **Row heatmap** – background intensity visualizes each cell's magnitude relative to the maximum in the row.
+- **Column percentile footer** – see the 60th percentile for each column.
+- Fully optimized for better performance.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🖼 Screenshots
+
+![Matrix Screenshot](./screenshots/Matrix.png)  
+_Hover on the sum cell to see percentages and the row heatmap._
+
+---
+
+## 💻 Installation
+
+```bash
+git clone https://github.com/NNaumenko83/memcrab-test.git
+cd matrix
+npm install
+npm run dev
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Open your browser and navigate to **http://localhost:5173** to see the application in action.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚡ Usage
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Add rows and columns to generate the matrix.
+
+- Click on a cell to increment its value.
+
+- Hover over a sum cell to see percentages and row heatmap.
+
+- Delete rows using the "Delete" button at the end of each row.
+
+## 🛠 Tech Stack
+
+- **React** – UI library
+
+- **TypeScript** – type-safe JavaScript
+
+- **CSS Modules** – scoped styling
+
+- **Vite** – fast development server and build tool
+
+- **Context API** – state management
