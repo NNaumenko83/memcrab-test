@@ -21,6 +21,16 @@
 .header {
 	font-weight: bold;
 	background: #e0e0e0;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.row__header {
+	font-weight: bold;
+	background: #e0e0e0;
+	position: sticky;
+	left: 0;
 }
 
 .sum {
@@ -39,4 +49,18 @@
 
 .row__highlighted {
 	background-color: rgba(170, 255, 0, 0.1);
+}
+
+.matrix {
+	overflow: auto;
+	width: 100%;
+	max-height: calc(100vh - 80px);
+	position: relative;
+}
+.header__block {
+	background: #e0e0e0;
+	position: sticky;
+	left: 0;
+	z-index: 2;
+	cursor: default;
 }

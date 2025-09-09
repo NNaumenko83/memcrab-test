@@ -19,7 +19,7 @@ export const MatrixFooter: React.FC = React.memo(() => {
             className={css.grid__container}
             style={{ gridTemplateColumns: `150px repeat(${columnsQuantity}, minmax(60px, 1fr)) 100px 100px` }}
         >
-            <div className={`${css.cell} ${css.header}`}>60th percentile</div>
+            <div className={`${css.cell} ${css.header__block}`}>60th percentile</div>
             {colPercentiles.map((val, i) => (
                 <div key={i} className={`${css.cell} ${css.percentile}`}>{val}</div>
             ))}

@@ -4,6 +4,7 @@ import Container from "../container/container"
 import { MatrixHeader } from "./matrix-header"
 import { MatrixRow } from "./matrix-row"
 import { MatrixFooter } from "./matrix-footer"
+import css from "./matrix.module.css"
 
 const Matrix: React.FC = () => {
     const { matrix, rowsQuantity, columnsQuantity } = useMatrixContext()
@@ -37,19 +38,22 @@ const Matrix: React.FC = () => {
 
     return (
         <Container>
-            <MatrixHeader />
-            {matrix.map((row, rowIndex) => (
-                <MatrixRow
-                    key={rowIndex}
-                    row={row}
-                    rowIndex={rowIndex}
-                    hoveredRowIndex={hoveredRowIndex}
-                    setHoveredRowIndex={handleRowHover}
-                    setHoveredCellId={handleCellHover}
-                    highlightedIds={highlightedIds}
-                />
-            ))}
-            <MatrixFooter />
+            <div className={css.matrix}>
+                <MatrixHeader />
+                {matrix.map((row, rowIndex) => (
+                    <MatrixRow
+                        key={rowIndex}
+                        row={row}
+                        rowIndex={rowIndex}
+                        hoveredRowIndex={hoveredRowIndex}
+                        setHoveredRowIndex={handleRowHover}
+                        setHoveredCellId={handleCellHover}
+                        highlightedIds={highlightedIds}
+                    />
+                ))}
+                <MatrixFooter />
+            </div>
+
         </Container>
     )
 }

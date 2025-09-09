@@ -33,7 +33,7 @@ export const MatrixRow: React.FC<MatrixRowProps> = React.memo(({
             className={css.grid__container + (showPercent ? ` ${css.row__highlighted}` : "")}
             style={{ gridTemplateColumns: `150px repeat(${row.length}, minmax(60px, 1fr)) 100px 100px` }}
         >
-            <div className={`${css.cell} ${css.header}`}>{rowIndex + 1}</div>
+            <div className={`${css.cell} ${css.row__header}`}>{rowIndex + 1}</div>
 
             {row.map((cell, colIndex) => {
                 const value = showPercent
